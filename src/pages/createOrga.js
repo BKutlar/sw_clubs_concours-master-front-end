@@ -25,7 +25,7 @@ function CreateOrga() {
     // post method for resgister
     let token = localStorage.getItem('token')
     console.log(token)
-    const response = await fetch('http://localhost:8080/api/createrOrga', {
+    const response = await fetch('http://localhost:8080/api/registerOrga', {
         method: 'POST',
       headers: {
         'Content-Type': 'application/json',
