@@ -14,6 +14,7 @@ function CreateClub () {
   const [description, setDescription] = useState('');
   const [region, setRegion ] = useState('');
 
+  let token = localStorage.getItem('token')
 
   async function create(event) {
     event.preventDefault();
@@ -22,8 +23,7 @@ function CreateClub () {
         headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json', 
-            'Authorization' : 'application/json',
-
+            'Authorization': `${token}`
         },
 
         body: JSON.stringify({
@@ -38,13 +38,15 @@ function CreateClub () {
           localStorage.getItem('token', data.user)
             // localStorage.getItem('token')
             console.log(localStorage)
-           const user = decodeToken(data.user);
-            localStorage.getItem('user', user)
-            window.location.href='#'
+          //  const user = decodeToken(data.user);
+          //   localStorage.getItem('user', user)
+          //   window.location.href='#'
             navigate('/acceuil')
 
             
-        } 
+        } else {
+          alert('False')
+        }
     
         if(data.status === 'ok') {
           alert('ok')

@@ -134,9 +134,11 @@ function Register() {
               <option value="user">Utilisateur</option>
               <option value="admin">Super admin</option>
               <option value="superUser">Super utilisateur</option>
+              
             </Field>
             {props.errors.role && <p>{props.errors.role}</p>}
 
+        
             <Field
               as={StyledTextInput}
               type="text"

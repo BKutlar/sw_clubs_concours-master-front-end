@@ -11,6 +11,7 @@ import Logo from './../assets/logo.png'
 function CreateOrga() {
 
   const [name, setName] = useState('');
+  const [username, setUserName] = useState('');
   const [description, setDescription] = useState('');
   const [region, setRegion] = useState('');
   // const [token, setToken] = useState(null);
@@ -22,27 +23,27 @@ function CreateOrga() {
     event.preventDefault()
     // const token = localStorage.getItem('token')
 
-    // post method for resgister
+    // post method for createOrga
     let token = localStorage.getItem('token')
     console.log(token)
-    const response = await fetch('http://localhost:8080/api/registerOrga', {
+    const response = await fetch('http://localhost:8080/authentication/createrOrga', {
         method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`
+        'Authorization': `${token}`
 
       },
 
       body: JSON.stringify({
         name,
-
+        username,
       })
 
     })
     // console.log(token)
 
     // console.log('after fetch')
-    const { data } = await response.json()
+    const data  = await response.json()
     // setToken(data.token)
     console.log(data)
     if (data.user) {
@@ -82,12 +83,12 @@ function CreateOrga() {
             name: Yup.string().required('Required'),
           })
         }
-        onSubmit={console.log}
+        // onSubmit={console.log}
       >
         {(props) => (
           <Form onSubmit={registerUser}>
+            <Field as={StyledTextInput} onChange={(e)=>setUserName(e.target.value)} type="text"  name="name" value={username} placeholder="Pseudo" />
             <Field as={StyledTextInput} onChange={(e) => setName(e.target.value)} type="text" name="name" value={name} placeholder="Nom de l'Organisation" />
-            <Field as={StyledTextInput} type="text" name="description" placeholder="Description" />
             <Field as='select' type="text" name="region" placeholder="region" style={{ width: '280px', padding: '15px', paddingLeft: '50px', fontSize: '17px', letterSpacing: '1px', color: "#1F2937", backgroundColor: "#E5E7EB", textDecoration: 'none', textAlign: 'center', transition: 'ease-in-out 0.3s', outline: 0 }}>
               <option value="auverge">Auvergne-Rhône-Alpes</option>
               <option value="bourgogne">Bourgogne-Franche-Comté</option>

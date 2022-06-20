@@ -11,7 +11,7 @@ const Home = () => {
             </div>
         
             <StyledTitle size={65}>
-                Welcome to Collecty'from
+                Welcome to Collecty'form
             </StyledTitle>
             <StyledSubTitle size={27}>
                 test
