@@ -19,6 +19,7 @@ import * as Yup from 'yup';
 import { decodeToken } from 'react-jwt';
 import { useNavigate } from 'react-router-dom';
 import { BiArrowBack } from 'react-icons/bi';
+import {Link } from 'react-router-dom';
 const Login = () => {
     const navigate = useNavigate();
     const [email, setEmail] = useState('');
@@ -49,6 +50,7 @@ const Login = () => {
             localStorage.setItem('token', data.user)
             const user = decodeToken(data.user);
             localStorage.setItem('user', JSON.stringify(user))
+            localStorage.setItem('role',data.info.role)
             alert('Login successful')
             window.location.href = '#'
 
@@ -56,13 +58,20 @@ const Login = () => {
             alert('Please check your username and password')
         }
 
-        if (data.status === 'ok') {
+        if (data.status === 'ok' && data.info.role !== 'superUser') {
         navigate('/acceuil')
         }
-    }
 
+        else if(data.status === 'ok' && data.info.role === 'superUser'){
+            navigate('/createClub')
+        }
+ 
+        
+    }
+    
 
     return (
+        
         <div>
             <StyledFormArea >
                 <Avatar image={Logo} />

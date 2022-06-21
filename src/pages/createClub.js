@@ -5,7 +5,7 @@ import { Avatar, ButtonGroup, colors, Copyright, StyledFormArea, StyledTextInput
 import Logo from './../assets/logo.png'
 import { useNavigate } from "react-router-dom";
 import {useState} from 'react';
-import { decodeToken } from 'react-jwt';
+// import { decodeToken } from 'react-jwt';
 
 function CreateClub () {
   const navigate = useNavigate();

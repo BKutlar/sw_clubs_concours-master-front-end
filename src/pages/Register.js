@@ -43,7 +43,7 @@ function Register() {
         navigate('/')
     } else {
         alert('Account create')
-        navigate('/')
+        navigate('/login')
     }
   }
 
