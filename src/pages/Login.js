@@ -58,13 +58,22 @@ const Login = () => {
             alert('Please check your username and password')
         }
 
-        if (data.status === 'ok' && data.info.role !== 'superUser') {
-        navigate('/acceuil')
+        if (data.status === 'ok' && data.info.role === '') {
+        navigate('/club')
+        }
+        else if(data.status === 'ok' && data.info.role !== 'superUser'){
+            navigate('/allowJoinOrgs')
         }
 
         else if(data.status === 'ok' && data.info.role === 'superUser'){
             navigate('/createClub')
         }
+
+        else{
+            navigate('/')
+        }
+
+        
  
         
     }

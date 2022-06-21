@@ -13,9 +13,9 @@ const Home = () => {
             <StyledTitle size={65}>
                 Welcome to Collecty'form
             </StyledTitle>
-            <StyledSubTitle size={27}>
+            {/* <StyledSubTitle size={27}>
                 test
-            </StyledSubTitle>
+            </StyledSubTitle> */}
             <ButtonGroup>
                 <StyleButton to="/login">Se connecter</StyleButton>
                 <StyleButton to="/register">S'inscrire</StyleButton>

@@ -5,7 +5,6 @@ import { Avatar, ButtonGroup, colors, Copyright, StyledFormArea, StyledTextInput
 import Logo from './../assets/logo.png'
 import { useNavigate } from "react-router-dom";
 import {useState} from 'react';
-// import { decodeToken } from 'react-jwt';
 
 function CreateClub () {
   const navigate = useNavigate();
@@ -36,11 +35,7 @@ function CreateClub () {
         console.log(data)
         if(data.user) {
           localStorage.getItem('token', data.user)
-            // localStorage.getItem('token')
             console.log(localStorage)
-          //  const user = decodeToken(data.user);
-          //   localStorage.getItem('user', user)
-          //   window.location.href='#'
             navigate('/acceuil')
 
             
@@ -52,7 +47,6 @@ function CreateClub () {
           alert('ok')
         }
 
-    // navigate('/acceuil')
 }
 
     return(
@@ -119,7 +113,6 @@ function CreateClub () {
             <option value="loire">Pays de la Loire</option>
             <option value="provence">Provence-Alpes-Côte-d'Azur</option>
           </Field>
-          {/* <input name='token' style={{}} */}
           <ButtonGroup>
             <StyledFormButton type='submit'>
               Créer le club

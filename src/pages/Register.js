@@ -61,7 +61,7 @@ function Register() {
           lastName: '',
           username: '',
           role: '',
-          organisation: '',
+          organisation: 'user',
         }}
         validationSchema={
           Yup.object().shape({

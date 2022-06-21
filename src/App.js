@@ -41,9 +41,9 @@ function App() {
             <Route path='/register' element={<Register />} />
             <Route path='/createClub' element={<CreateClub />} />
             <Route path='/createOrga' element={<CreateOrga />} />
-            <Route path='/Club' element={<NewFilter />} />
+            <Route path='/club' element={<NewFilter />} />
             <Route path='/Clubmembers' element={<Clubmembers/>}/>
-            <Route path='/AllowJoinOrgs' element={<AllowJoinOrgs/>}/>
+            <Route path='/allowJoinOrgs' element={<AllowJoinOrgs/>}/>
             <Route path='/acceuil' element={<Acceuil user={user} />} /> {/**user={user} */}
           </Routes>
         </StyledContainer>
