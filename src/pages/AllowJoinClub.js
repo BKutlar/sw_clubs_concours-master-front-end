@@ -77,8 +77,8 @@ var myInit = { method: 'GET',
                   <br />
                   <br />
                   <div className='allButton'>
-                      <button style={{ backgroundColor: 'white', cursor:'pointer' }} onClick={() => setFilter({ field: 'nom', order: (filter.order === 'ASC') ? 'DESC' : 'ASC' })}> Name <ArrowUpwardIcon /></button>
-                      <button style={{ backgroundColor: 'white', cursor:'pointer'}} onClick={() =>  setFilter({ field: 'prenom', order: (filter.order === 'ASC') ? 'DESC' : 'ASC' })}> Can Join Other <ArrowUpwardIcon /></button>
+                      <button className='Jbutton' onClick={() => setFilter({ field: 'nom', order: (filter.order === 'ASC') ? 'DESC' : 'ASC' })}> Name <ArrowUpwardIcon /></button>
+                      <button className='Jbutton' onClick={() =>  setFilter({ field: 'prenom', order: (filter.order === 'ASC') ? 'DESC' : 'ASC' })}> Can Join Other <ArrowUpwardIcon /></button>
                   </div>
                 
   

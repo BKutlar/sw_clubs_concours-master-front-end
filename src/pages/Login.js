@@ -14,6 +14,7 @@ import {
 } from './../components/Styles';
 import { useState } from 'react';
 import Logo from './../assets/logo.png'
+import BackLogo from './../assets/back_logo_.png';
 import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 import { decodeToken } from 'react-jwt';
@@ -82,8 +83,14 @@ const Login = () => {
     return (
         
         <div>
+            <div style={{ position: "absolute", top: 0, left: 0, backgroundColor: "transparent", width: "100%", padding: "15fx", display: "flex", justifyContent: "flex-start" }}>
+                    <div className='Lnav'>
+                        <img src="Collecty'form.png" alt='' className="logo" />
+                        <h1>Login</h1>
+                    </div>
+                </div>
             <StyledFormArea >
-                <Avatar image={Logo} />
+                {/* <Avatar image={BackLogo} /> */}
                 <StyledTitle color={colors.theme} size={30}> Connexion au Collecty'Space </StyledTitle>
                 <Icon to='/'><BiArrowBack /></Icon>
                 <Formik

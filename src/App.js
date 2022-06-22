@@ -11,7 +11,7 @@ import CreateOrga from './pages/createOrga';
 import Acceuil from './pages/Acceuil';
 import Clubmembers from './pages/ClubMemebers';
 import AllowJoinOrgs from './pages/AllowJoinClub';
-
+import CreateEvent from './pages/createEvent';
 //styled components
 
 import { StyledContainer } from './components/Styles';
@@ -19,7 +19,7 @@ import './index.css';
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { StoreContext } from './contexts/store.context';
-import NewFilter from './pages/NewFilter';
+import Club from './pages/Club';
 
 function App() {
   const [user, setUser] = React.useState({});
@@ -40,11 +40,12 @@ function App() {
             <Route path='/login' element={<Login setUser={setUser} />} /> {/*setUser={setUser}  */}
             <Route path='/register' element={<Register />} />
             <Route path='/createClub' element={<CreateClub />} />
-            <Route path='/createOrga' element={<CreateOrga />} />
-            <Route path='/club' element={<NewFilter />} />
+            {/* <Route path='/createOrga' element={<CreateOrga />} /> */}
+            <Route path='/club' element={<Club />} />
             <Route path='/Clubmembers' element={<Clubmembers/>}/>
             <Route path='/allowJoinOrgs' element={<AllowJoinOrgs/>}/>
-            <Route path='/acceuil' element={<Acceuil user={user} />} /> {/**user={user} */}
+            <Route path='/createEvent' element={<CreateEvent/>}/>
+            {/* <Route path='/acceuil' element={<Acceuil user={user} />} /> *user={user} */}
           </Routes>
         </StyledContainer>
       </Router>

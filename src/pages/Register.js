@@ -48,8 +48,15 @@ function Register() {
   }
 
   return (
+    <>
+    <div style={{ position: "absolute", top: 0, left: 0, backgroundColor: "transparent", width: "100%", padding: "15fx", display: "flex", justifyContent: "flex-start" }}>
+                    <div className='Rnav'>
+                        <img src="Collecty'form.png" alt='' className="logo" />
+                        <h1>Register</h1>
+                    </div>
+                </div>
     <StyledFormArea>
-      <Avatar image={Logo} />
+      {/* <Avatar image={Logo} /> */}
       <StyledTitle color={colors.theme} size={30}> Inscription au Collecty'Space </StyledTitle>
 
       <Formik
@@ -184,6 +191,7 @@ function Register() {
         Outil d'entrainement Collecty'Space - 2022
       </Copyright>
     </StyledFormArea>
+    </>
   )
 };
 

@@ -3,10 +3,11 @@ import { format } from "date-fns";
 import TextField from '@mui/material/TextField';
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 import './filter.css';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import Logo from '../assets/logo.png'
 const records = [
-    { club: "Lord", total_point: 2000, periode: '01/01/2012', date: "2012", join: 'true' },
-    { club: "Name", total_point: 200, periode: '01/01/2015', date: "2015", join: 'true' }
+    { club: "Lord", total_point: 2000, periode: '01/01/2012', date: "2012", region: 'idf', membres: '15/50' },
+    { club: "Name", total_point: 200, periode: '01/01/2015', date: "2015", region: 'haut-seine', membres: '45/50' }
 ];
 
 // const records = [
@@ -56,8 +57,11 @@ export default function NewFilter() {
                     <br />
                     <br />
                     <div className='allButton'>
-                        <button style={{ backgroundColor: 'white', cursor: 'pointer' }} onClick={() => setFilter({ field: 'club', order: (filter.order === 'ASC') ? 'DESC' : 'ASC' })}> Name <ArrowUpwardIcon /></button>
-                        <button style={{ backgroundColor: 'white', cursor: 'pointer' }} onClick={() => setFilter({ field: 'total_point', order: (filter.order === 'ASC') ? 'DESC' : 'ASC' })}> Point <ArrowUpwardIcon /></button>
+                        <button className='Jbutton' onClick={() => setFilter({ field: 'club', order: (filter.order === 'ASC') ? 'DESC' : 'ASC' })}> Name <ArrowUpwardIcon /></button>
+                        <button className='Jbutton' onClick={() => setFilter({ field: 'total_point', order: (filter.order === 'ASC') ? 'DESC' : 'ASC' })}> Point <ArrowUpwardIcon /></button>
+                        <button className='Jbutton' onClick={() => setFilter({ field: 'region', order: (filter.order === 'ASC') ? 'DESC' : 'ASC' })}> Region <ArrowUpwardIcon /></button>
+                        <button className='Jbutton' onClick={() => setFilter({ field: 'membres', order: (filter.order === 'ASC') ? 'DESC' : 'ASC' })}> Membres <ArrowUpwardIcon /></button>
+
                     </div>
 
 
@@ -71,10 +75,13 @@ export default function NewFilter() {
                 <table>
                     <thead>
                         <tr>
+                            {/* <th>Embleme</th> */}
                             <th>Club</th>
                             <th>TP</th>
                             <th>Periode</th>
-                            <button>Join</button>
+                            <th>Region</th>
+                            <th>Membres</th>
+                            {/* <button>Join</button> */}
                         </tr>
                     </thead>
 
@@ -82,6 +89,7 @@ export default function NewFilter() {
                         {filteredRecords.map((row, index) => {
                             return (
                                 <tr key={index}>
+                                    {/* <td>{row.embleme || '--'}</td> */}
                                     <td>{row.club || "--"}</td>
                                     <td>{row.total_point || "--"}</td>
 
@@ -90,8 +98,14 @@ export default function NewFilter() {
                                         {row.periode ? format(new Date(row.periode), "yyyy") : "--"}
                                     </td>
                                     <td>
+                                        {row.region || "--"}
+                                    </td>
+                                    <td>
+                                        {row.membres || '--'}
+                                    </td>
+                                    <td>
                                         <td>
-                                            <Link to='/Clubmembers'>join</Link>
+                                            <Link to='/Clubmembers'><button className='Jbutton'>join</button></Link>
                                         </td>
                                     </td>
                                 </tr>

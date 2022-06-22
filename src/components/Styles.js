@@ -23,6 +23,7 @@ export const StyledContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items : center;
+    font-family: 'Poppins', sans-serif;
 `;
 
 //Home
@@ -32,6 +33,7 @@ export const StyledTitle = styled.h2`
     color: ${(props) => props.color ? props.color : colors.primary}
     padding: 5px;
     margin-bottom: 20px
+    font-family: 'Poppins', sans-serif;
 `;
 
 export const StyledSubTitle = styled.p`
@@ -40,6 +42,7 @@ export const StyledSubTitle = styled.p`
     color: ${(props) => props.color ? props.color : colors.primary}
     padding: 5px;
     margin-bottom: 25px
+    font-family: 'Poppins', sans-serif;
 `;
 
 export const Avatar = styled.div`
@@ -57,7 +60,8 @@ export const StyleButton = styled(Link)`
     width: 150px;
     background-color: transparent;
     font-size 16px;
-    border : 3px solid ${colors.primary};
+    border : 3px solid;
+    border-color: purple;
     border-radius 25px;
     color; ${colors.primary};
     text-decoration: none;
